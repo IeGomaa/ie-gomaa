@@ -1,0 +1,102 @@
+header {
+    background-color: #202020;
+    position: relative;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    color: #FFF;
+    .container {
+        @include padding(10px 0px);
+        display: flex;
+        align-items: center;
+        @media #{$Mobile} {
+            display: initial;
+        }
+        .word {
+            flex-basis: 30%;
+            h1 {
+                @include trans(.3);
+                @extend %cpointer;
+                &:hover {
+                    color: #{$redColor};
+                }
+                @media #{$Mobile} {
+                    font-size: 20px;
+                    margin-left: 15px;
+                    padding-top: 5px;
+                }
+                @media #{$minMedium} {
+                    font-size: 30px;
+                }
+                @media #{$maxMedium} {
+                    font-size: 40px;
+                }
+
+            }
+
+            p {
+                color: #F2f2f2;
+
+                @media #{$Mobile} {
+                    font-size: 12px;
+                    margin-left: 18px;
+                }
+
+            }
+        }
+        nav {
+            flex-basis: 70%;
+            i {
+                position: absolute;
+                display: none;
+                text-align: end;
+                cursor: pointer;
+                font-size: 20px;
+                @media #{$Mobile} {
+                    display: block;
+                    position: relative;
+                    top: -30px;
+                    right: 15px;
+                }
+            }
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                @media #{$minMedium} {
+                    display: flex !important;
+                    flex-direction: initial;
+                }
+                @media #{$Mobile} {
+                    display: none;
+                    flex-direction: column;
+                    background-color: #{$mainColor};
+                    @include padding(15px 20px);
+                }
+                
+                li {
+                    @include margin(5px 10px);
+                    @extend %cpointer;
+                    @include trans(.3);
+                    @extend %txtcap;
+
+                    @media #{$Mobile} {
+                        display: block;
+                    }
+                    @media #{$minMedium} {
+                        font-size: 14px;
+                    }
+                    @media #{$maxMedium} {
+                        font-size: 16px;
+                    }
+
+                    &:hover{
+                        color: #{$redColor};
+                    }
+
+                   
+                }
+            }
+        }
+    }
+}

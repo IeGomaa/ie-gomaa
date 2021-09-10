@@ -1,0 +1,150 @@
+// Start Footer
+
+footer {
+    @include padding(40px 0);
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        .box {
+            margin-bottom: 30px;
+            &:first-of-type {
+                flex-basis: 50%;
+                @media #{$Mobile} {
+                    flex-basis: 100%;
+                }
+                @media #{$minMedium} {
+                    flex-basis: 75%;
+                }
+                @media #{$maxMedium} {
+                    flex-basis: 75%;
+                }
+                @media #{$large} {
+                    flex-basis: 50%;
+                }
+            }
+            &:nth-of-type(2) {
+                flex-basis: 25%;
+                @media #{$Mobile} {
+                    flex-basis: 100%;
+                }
+                @media #{$minMedium} {
+                    flex-basis: 25%;
+                }
+            }
+            &:last-of-type {
+                flex-basis: 25%;
+                @media #{$Mobile} {
+                    flex-basis: 100%;
+                }
+                @media #{$minMedium} {
+                    flex-basis: 50%;
+                }
+                @media #{$maxMedium} {
+                    flex-basis: 50%;
+                }
+                @media #{$large} {
+                    flex-basis: 25%;
+                }
+            }
+            h4 {
+                margin-bottom: 20px;
+            }
+            .text {
+                display: flex;
+                .image {
+                    width: 50%;
+                    @media #{$Mobile} {
+                        width: 100%;
+                    }
+                    margin-bottom: 20px;
+                    img {
+                        background-color: #FFF;
+                        @include padding(3px);
+                        border: 1px solid #{$grayColor};
+                    }
+                }
+                .word {
+                    @include margin(0px 20px);
+                    h6 {
+
+                    }
+                    p {
+                        @media #{$Mobile} {
+                            font-size: 13px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+            p {
+
+            }
+            span {
+
+            }
+            address {
+
+            }
+            h6 {
+                @extend %txtcap;
+                @include margin(10px 0);
+            }
+            time {
+
+            }
+            input:not([type="submit"]),
+            textarea {
+                width: 100%;
+                @include padding(8px 10px);
+                margin-bottom: 10px;
+                outline: none;
+                border: 0;
+                background-color: #f2f2f2;
+                resize: none;
+                @include prefixer(border-radius,5px,(webkit moz o));
+                &::placeholder {
+                    @extend %txtcap;
+                    font: {
+                        family: cursive;
+                        size: 13px;
+                    }
+                }
+            }
+        }
+    }
+    .copy {
+        border-top: 1px solid #{$grayColor};
+        padding-top: 25px;
+        .word {
+            display: flex;
+            @media #{$Mobile} {
+                flex-wrap: wrap;
+            }
+            span,
+            .icon {
+                flex-basis: 50%;
+                @media #{$Mobile} {
+                    flex-basis: 100%;
+                    text-align: center !important;
+                }
+            }
+            span {
+                @extend %txtcap;
+                @media #{$Mobile} {
+                    font-size: 13px;
+                    margin-bottom: 10px;
+                }
+            }
+            .icon {
+                text-align: end;
+                i:not(:last-of-type) {
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+}
+
+// End Footer

@@ -1,0 +1,90 @@
+/* Start Main Var */
+
+$mainColor: #202020;
+$redColor: #e2494c;
+$grayColor: #9c9c9c;
+
+/* Media Screen */
+
+$Mobile: '(max-width:767px)';
+$minMedium: '(min-width:768px)';
+$maxMedium: '(min-width:992px)';
+$large: '(min-width:1200px)';
+
+/* Media Screen */
+
+/* End Main Var */
+
+@mixin padding($p) {
+    padding: #{$p} #{$p};
+}
+
+@mixin margin($m) {
+    margin: #{$m} #{$m};
+}
+
+@mixin trans($t) {
+    transition: all #{$t}s ease-in-out;
+    -webkit-transition: all #{$t}s ease-in-out;
+    -moz-transition: all #{$t}s ease-in-out;
+    -ms-transition: all #{$t}s ease-in-out;
+    -o-transition: all #{$t}s ease-in-out;
+}
+
+/*
+  ** prefix
+  ** Use Mixin To Make Prefix
+*/
+
+@mixin prefixer($properity , $val , $prefixes:()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $properity}:$val;
+    }
+    #{$properity}:$val;
+}
+
+/*
+  ** overlay
+  **
+*/
+
+%overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba( #000000, .6);
+}
+
+%tcenter {
+    text-align: center
+}
+
+%cpointer {
+    cursor: pointer;
+}
+
+%txtcap {
+    text-transform: capitalize;
+}
+
+/*
+  ** animation
+  **
+*/
+
+@mixin animation($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+
+}

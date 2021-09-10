@@ -1,0 +1,111 @@
+* {
+    @include padding(0px 0px);
+    @include margin(0px 0px);
+    @include prefixer(box-sizing,border-box,(webkit moz));
+}
+
+body {
+    font: {
+        family: cursive;
+    }
+    @media #{$Mobile} {
+        font-family: 'Akaya Kanadaka' !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #{$mainColor};
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+img {
+    width: 100%;
+}
+
+/*
+  ** heading
+  **
+*/
+
+$header: (h1:40px,h2:35px,h3:30px,h4:25px,h5:20px,h6:15px);
+@each $head,$val in $header {
+    #{$head} {
+        font-size: $val;
+    };
+}
+
+h5 {
+    @include padding(10px 20px);
+    @include margin(0 auto);
+    @include prefixer(border-radius,20px,(webkit moz o));
+    @include trans(.3);
+    @extend %cpointer;
+    width: fit-content;
+    background-color: #{$mainColor};
+    color: #FFF;
+    text-transform: capitalize;
+    position: relative;
+    &:hover {
+        background-color: #{$redColor};
+    }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: #{$grayColor};
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        z-index: -1;
+    }
+    &::before {
+        right: 108px;
+    }
+    &::after {
+        left: 108px;
+    }
+    @media #{$Mobile} {
+        @include padding(8px 20px);
+        font-size: 14px;
+    }
+}
+
+$paragraph: (16px:#777);
+@each $psize,$pcolor in $paragraph {
+    p {
+        font-size: $psize;
+        color: $pcolor;
+        line-height: 1.7;
+    };
+}
+
+.fixed {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #f2f2f2;
+    @extend %cpointer;
+    border: 1px solid #000;
+    z-index: 4;
+    @include prefixer(border-radius,50%,(webkit moz o));
+    i {
+        @include padding(15px);
+    }
+    &:hover {
+        background-color: #{$mainColor};
+        color: #f2f2f2;
+    }
+}

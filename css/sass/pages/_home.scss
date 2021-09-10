@@ -1,0 +1,195 @@
+// Start Slider 
+
+.slider {
+    @extend %tcenter;
+    @media #{$Mobile} {
+        @include padding(20px 0);
+    }
+    @media #{$minMedium} {
+        @include padding(30px 0);
+    }
+    @media #{$maxMedium} {
+        @include padding(50px 0);
+    }
+    .word {
+
+        q {
+            @media #{$Mobile} {
+                font-size: 13px;
+            }
+        }
+    }
+    .image {
+        .photo {
+            @include margin(20px auto);
+            width: 60%;
+        }
+        .bullets {
+            ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    @include prefixer(border-radius,50%,(webkit moz o));
+                    @extend %cpointer;
+                    background-color: #{$grayColor};
+                    width: 13px;
+                    height: 13px;
+                    @media #{$Mobile} {
+                        width: 10px;
+                        height: 10px;
+                    }
+                    margin-right: 5px;
+                    border: 1px solid #{$mainColor};
+                    @include trans(.3);
+                    &:hover,
+                    &.active {
+                        background-color: #FFF;
+                        border-color: #{$grayColor};
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Slider 
+
+// Start Services
+
+.services {
+    @extend %tcenter;
+    .word {
+        h5 {
+            
+        }
+        > p {
+            @include margin(15px auto);
+            max-width: 80%;
+            @media #{$Mobile} {
+                font-size: 13px;
+            }
+        }
+        .content {
+            display: flex;
+            @include margin(50px 0);
+            @media #{$Mobile} {
+                display: initial;
+            }
+            .box {
+                display: flex;
+                i {
+                    font-size: 30px;
+                    margin-top: 10px;
+                    @extend %cpointer;
+                    @include trans(.3);
+                    &:hover{
+                        color: #{$redColor};
+                    }
+                    @media #{$Mobile} {
+                        font-size: 20px;
+                    }
+                }
+                .text {
+                    text-align: left;
+                    h4 {
+                        @include margin(0px 19px);
+                        @media #{$Mobile} {
+                            font-size: 20px;
+                        }
+                    }
+                    p {
+                        @include margin(15px auto);
+                        max-width: 90%;
+                        @media #{$Mobile} {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Services
+
+
+// Start Our Players
+
+.players {
+    @extend %tcenter;
+    .word {
+        h5 {
+
+        }
+        > p {
+            @include margin(15px auto);
+            max-width: 80%;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+            @include margin(50px 0);
+            .box {
+                margin-right: 10px;
+                margin-bottom: 20px;
+                .image {
+                    @include prefixer(filter,grayscale(100%),(webkit));
+                    @include trans(.3);
+                    @extend %cpointer;
+                    &:hover {
+                        @include prefixer(filter,grayscale(0%),(webkit));
+                    }
+                }
+                .text {
+                    text-align: left;
+                    span {
+                        display: inline-block;
+                        @include margin(10px 12px);
+                    }
+                    p {
+                        @include margin(0px auto);
+                        max-width: 90%;
+                    }
+                    a {
+                        display: inline-block;
+                        font-size: 14px;
+                        color: #{$mainColor};
+                        @extend %txtcap;
+                        @include margin(10px 12px);
+                        @include trans(.3);
+                        @extend %cpointer;
+                        &:hover {
+                            color: #{$redColor};
+                        }
+                        i {
+                            margin-left: 3px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Our Players
+
+// Start Lorem Ipsum
+
+.lorem {
+    .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+        @include margin(20px 0);
+        .image {
+            margin-right: 10px;
+            img {
+                height: 265px;
+            }
+        }
+    }
+}
+
+
+
+// End Lorem Ipsum

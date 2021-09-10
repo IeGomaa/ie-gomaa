@@ -1,0 +1,28 @@
+.button {
+    font-size: 13px;
+    @include padding(10px 22px);
+    background-color: #{$mainColor};
+    color: #FFF;
+    border: 0;
+    font: {
+        family: cursive;
+    }
+    outline: none;
+    @extend %cpointer;
+    @extend %txtcap;
+    @include prefixer(border-radius,5px,(webkit moz));
+    @include trans(.3);
+    // @media #{$Mobile} {
+    //     background-color: #f00;
+    // }
+    // @media #{$minMedium} {
+    //     background-color: rgb(171, 228, 15);
+    // }
+    // @media #{$maxMedium} {
+    //     background-color: rgb(147, 40, 218);
+    // }
+    &:hover {
+        color: #{$mainColor};
+        background-color: #f2f2f2;
+    }
+}
